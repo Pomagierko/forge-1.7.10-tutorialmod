@@ -1,2 +1,10 @@
+#ITEMS
 item.ItemTable.name=Table
+item.ItemCheese.name=Cheese
+#BLOCKS
 tile.BlockTable.name=Tableblock
+tile.RubyOre.name=Ruby Ore
+
+
+
+itemGroup.tabTutorialMod=Tutorial Mod
