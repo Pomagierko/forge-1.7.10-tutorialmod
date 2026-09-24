@@ -1,5 +1,6 @@
 package com.pomagierko.tutorial;
 
+import com.pomagierko.tutorial.item.*;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -13,6 +14,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 
 @Mod(modid = "tm", name = "TutorialMod", version = "1.0")
 public class TutorialMod {
@@ -21,6 +23,17 @@ public class TutorialMod {
     public static Item itemCheese;
     public static Block blockTable;
     public static Block rubyOre;
+
+    public static Item cheesePickaxe;
+    public static Item cheeseAxe;
+    public static Item cheeseShovel;
+    public static Item cheeseHoe;
+    public static Item cheeseSword;
+
+    public static final Item.ToolMaterial cheeseToolMaterial = EnumHelper.addToolMaterial("cheeseToolMaterial",
+            4, 9999, 12.0f, 999.0f, 30);
+
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -32,7 +45,17 @@ public class TutorialMod {
         blockTable = new BlockTable(Material.wood).setBlockName("BlockTable").setBlockTextureName("tm:blocktable").setCreativeTab(tabTutorialMod);
         rubyOre = new RubyOre(Material.rock).setBlockName("RubyOre").setBlockTextureName("tm:rubyore").setCreativeTab(tabTutorialMod);
 
+        cheesePickaxe = new ItemCheesePickaxe(cheeseToolMaterial).setUnlocalizedName("CheesePickaxe").setTextureName("tm:itemcheesepickaxe").setCreativeTab(tabTutorialMod);
+        cheeseAxe = new ItemCheeseAxe(cheeseToolMaterial).setUnlocalizedName("CheeseAxe").setTextureName("tm:itemcheeseaxe").setCreativeTab(tabTutorialMod);
+        cheeseShovel = new ItemCheeseShovel(cheeseToolMaterial).setUnlocalizedName("CheeseShovel").setTextureName("tm:itemcheeseshovel").setCreativeTab(tabTutorialMod);
+        cheeseHoe = new ItemCheeseHoe(cheeseToolMaterial).setUnlocalizedName("CheeseHoe").setTextureName("tm:itemcheesehoe").setCreativeTab(tabTutorialMod);
+        cheeseSword = new ItemCheeseSword(cheeseToolMaterial).setUnlocalizedName("CheeseSword").setTextureName("tm:itemcheesesword").setCreativeTab(tabTutorialMod);
 
+        GameRegistry.registerItem(cheesePickaxe, cheesePickaxe.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(cheeseAxe, cheeseAxe.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(cheeseShovel, cheeseShovel.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(cheeseHoe, cheeseHoe.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(cheeseSword, cheeseSword.getUnlocalizedName().substring(5));
 
         GameRegistry.registerItem(itemTable, itemTable.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemCheese, itemCheese.getUnlocalizedName().substring(5));

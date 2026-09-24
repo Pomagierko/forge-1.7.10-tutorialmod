@@ -1,6 +1,12 @@
 #ITEMS
 item.ItemTable.name=Table
 item.ItemCheese.name=Cheese
+
+item.CheesePickaxe.name=Cheese Pickaxe
+item.CheeseAxe.name=Cheese Axe
+item.CheeseShovel.name=Cheese Shovel
+item.CheeseHoe.name=Cheese Hoe
+item.CheeseSword.name=Cheese Sword
 #BLOCKS
 tile.BlockTable.name=Tableblock
 tile.RubyOre.name=Ruby Ore
